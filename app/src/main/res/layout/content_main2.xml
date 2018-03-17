@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="60dp"
+    android:fillViewport="true"
+    android:padding="5dp"
+    tools:context=".Main2Activity">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="15dp"
+            card_view:cardBackgroundColor="@android:color/darker_gray"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="14dp"
+            card_view:contentPadding="10dp">
+
+            <RelativeLayout
+
+                android:id="@+id/rl"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/case_num"
+                    android:layout_alignBottom="@+id/case_num"
+                    android:layout_alignParentStart="true"
+                    android:text="Case Number" />
+
+                <EditText
+                    android:id="@+id/case_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_toEndOf="@+id/text1" />
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/case_name"
+                    android:layout_alignBottom="@+id/case_name"
+                    android:layout_alignParentStart="true"
+                    android:text="Client Name :" />
+
+                <EditText
+                    android:id="@+id/case_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/case_num"
+                    android:layout_below="@+id/case_num" />
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/title"
+                    android:layout_alignBottom="@+id/title"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="18dp"
+                    android:text="Title" />
+
+                <EditText
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/case_name"
+                    android:layout_below="@+id/case_name" />
+
+                <TextView
+                    android:id="@+id/text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/last_date"
+                    android:layout_alignBottom="@+id/last_date"
+                    android:layout_alignParentStart="true"
+                    android:text="Last date of hearing :" />
+
+                <EditText
+                    android:id="@+id/last_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@+id/text4"
+                    android:inputType="date" />
+
+                <TextView
+                    android:id="@+id/text5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/next_date"
+                    android:layout_alignBottom="@+id/next_date"
+                    android:layout_alignParentStart="true"
+                    android:text="Next date of hearing :" />
+
+                <EditText
+                    android:id="@+id/next_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/last_date"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@+id/text4"
+                    android:inputType="date" />
+
+                <TextView
+                    android:id="@+id/text6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/total_fees"
+                    android:layout_alignBottom="@+id/total_fees"
+                    android:layout_alignEnd="@+id/text2"
+                    android:text="Total Fees :" />
+
+                <EditText
+                    android:id="@+id/total_fees"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/next_date"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@+id/text4"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/text7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/fees"
+                    android:layout_alignBottom="@+id/fees"
+                    android:layout_alignStart="@+id/text6"
+                    android:text="Fees Paid:" />
+
+                <EditText
+                    android:id="@+id/fees"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/total_fees"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@+id/text4"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/text8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fees"
+                    android:layout_marginTop="21dp"
+                    android:layout_toStartOf="@+id/case_num"
+                    android:text="Court Name :" />
+
+                <EditText
+                    android:id="@+id/c_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/text8"
+                    android:layout_alignBottom="@+id/text8"
+                    android:layout_alignStart="@+id/fees" />
+
+                <TextView
+                    android:id="@+id/text9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/text8"
+                    android:layout_below="@+id/c_name"
+                    android:layout_marginTop="24dp"
+                    android:text="Mobile Number:" />
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/text9"
+                    android:layout_alignBottom="@+id/text9"
+                    android:layout_alignStart="@+id/c_name" />
+
+                <Button
+                    android:id="@+id/save"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/phone"
+                    android:layout_marginEnd="51dp"
+                    android:layout_marginTop="23dp"
+                    android:text="Save" />
+
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</ScrollView>
