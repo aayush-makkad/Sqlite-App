@@ -12,4 +12,13 @@
     <string name="title_activity_updater">update</string>
     <string name="title_activity_todays_events">TodaysEvents</string>
     <string name="title_activity_backup">Backup</string>
+    <string name="title_activity_fingerprint">fingerprint</string>
+    <string name="title_activity_search_menu">SearchMenu</string>
+    <string name="title_activity_fees_search">feesSearch</string>
+    <string name="title_activity_othersearch_menu">OthersearchMenu</string>
+    <string name="title_activity_client_name_search">clientNameSearch</string>
+    <string name="title_activity_court_name_search">CourtNameSearch</string>
+    <string name="title_activity_case_num_search">CaseNumSearch</string>
+    <string name="title_activity_doh_search">DohSearch</string>
+    <string name="title_activity_restore_data">RestoreData</string>
 </resources>

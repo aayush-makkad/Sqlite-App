@@ -1,0 +1,145 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".updateActivity"
+    android:layout_marginTop="60dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/case_num"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="15dp"
+                card_view:cardBackgroundColor="@color/colorPrimary"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardElevation="14dp"
+                card_view:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:id="@+id/text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="Client name"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        android:visibility="visible"
+                        tools:text="Client name" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/name"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/case_num"
+                android:layout_gravity="center"
+                android:layout_margin="15dp"
+                android:layout_marginTop="20dp"
+                card_view:cardBackgroundColor="@color/colorPrimaryDark"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardElevation="14dp"
+                card_view:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="15dp">
+
+                    <TextView
+                        android:id="@+id/text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="Court Name"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        android:visibility="visible"
+                        tools:text="Court Name" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/ldoh"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_alignStart="@+id/name"
+                android:layout_below="@+id/name"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                card_view:cardBackgroundColor="@color/colorPrimary"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardElevation="14dp"
+                card_view:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:id="@+id/text3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="Case number"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        tools:text="Case number" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/ndoh"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/ldoh"
+                android:layout_gravity="center"
+                android:layout_margin="15dp"
+                android:layout_marginTop="22dp"
+                card_view:cardBackgroundColor="@color/colorPrimaryDark"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardElevation="14dp"
+                card_view:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:id="@+id/text4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="25dp"
+                        android:text="date of hearing"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                        tools:text="date of hearing" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

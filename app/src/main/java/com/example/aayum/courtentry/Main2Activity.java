@@ -241,6 +241,18 @@ public class Main2Activity extends AppCompatActivity
             finish();
         }
 
+        else if (id == R.id.nav_search){
+            Intent i = new Intent(Main2Activity.this,SearchMenu.class);
+            startActivity(i);
+            finish();
+        }
+
+        else if (id == R.id.nav_restore){
+            Intent i = new Intent(Main2Activity.this,RestoreData.class);
+            startActivity(i);
+            finish();
+        }
+
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
             return true;

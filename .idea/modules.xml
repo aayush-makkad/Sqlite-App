@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CourtEntry.iml" filepath="$PROJECT_DIR$/CourtEntry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sqlite-App.iml" filepath="$PROJECT_DIR$/Sqlite-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -83,6 +83,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public Cursor getFeesDetails(String _client){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select total_fees,FEES_PAID from entry WHERE CASE_NAME = ?",new String[]{_client});
+       // Cursor res = db.rawQuery("SELECT * FROM entry WHERE next_date = ?",new String[] {str});
+        return res;
+    }
+
+    public Cursor getCaseDiaData(String _client){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select ID,CASE_NAME,title,next_date,last_date from "+TABLE_NAME+" WHERE case_name = ?",new String[]{_client});
+        return res;
+    }
+
+
+    public Cursor getCaseDataFromNumber(String _client){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select ID,CASE_NAME,title,next_date,last_date from "+TABLE_NAME+" WHERE case_num = ?",new String[]{_client});
+        return res;
+    }
+
+    public Cursor getCaseDataFromndoh(String _client){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select ID,CASE_NAME,title,next_date,last_date from "+TABLE_NAME+" WHERE next_date = ?",new String[]{_client});
+        return res;
+    }
+
+    public Cursor getCaseDiaCourtData(String _client){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select ID,CASE_NAME,title,next_date,last_date from "+TABLE_NAME+" WHERE court_name = ?",new String[]{_client});
+        return res;
+    }
+
     public boolean updateData(String id,String case_num,String case_name,String title,String last_date,String next_date,String total,String paid,String mobile,String court) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();

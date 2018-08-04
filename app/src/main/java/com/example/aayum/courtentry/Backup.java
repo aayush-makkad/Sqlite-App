@@ -71,10 +71,22 @@ public class Backup extends AppCompatActivity implements View.OnClickListener{
         File f = new File("/data/data/com.example.aayum.courtentry/databases/court3.db");
         FileInputStream fis = null;
         FileOutputStream fos = null;
+        //FileOutputStream fosFaleSafe = null;
         try{
+            getExternalCacheDir();
 
             fis = new FileInputStream(f);
-            fos = new FileOutputStream("/sdcard/Android/data/com.example.aayum.courtentry/files/backup.db");
+
+            File f3 = new File(Environment.getExternalStorageDirectory().getPath()+"/Android/data/com.example.aayum.courtentry/files");
+            f3.mkdirs();
+            File f2 = new File(Environment.getExternalStorageDirectory().getPath()+"/Android/data/com.example.aayum.courtentry/files/backup.db");
+            try {
+                Toast.makeText(this,f2.getPath().toString(),Toast.LENGTH_LONG);
+                fos = new FileOutputStream(f2);
+            }catch(Exception e){
+                Toast.makeText(this,e.toString(),Toast.LENGTH_LONG).show();
+            }
+
             while(true){
                 int i = fis.read();
                 if(i!=-1){
@@ -85,12 +97,12 @@ public class Backup extends AppCompatActivity implements View.OnClickListener{
             }
 
             fos.flush();
-            Toast.makeText(this,"BackupCreated",Toast.LENGTH_LONG);
+            Toast.makeText(this,"BackupCreated",Toast.LENGTH_LONG).show();
             return true;
         }
         catch (Exception ex){
             ex.printStackTrace();
-            Toast.makeText(this,"sorry",Toast.LENGTH_LONG);
+            Toast.makeText(this,"sorry",Toast.LENGTH_LONG).show();
 
             return false;
         }

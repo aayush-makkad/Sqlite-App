@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.aayum.courtentry">
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 
     <application
         android:allowBackup="true"
@@ -11,8 +13,6 @@
         android:roundIcon="@drawable/court"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -46,6 +46,42 @@
         <activity
             android:name=".Backup"
             android:label="@string/title_activity_backup"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".fingerprint"
+            android:label="@string/title_activity_fingerprint"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SearchMenu"
+            android:label="@string/title_activity_search_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".feesSearch"
+            android:label="@string/title_activity_fees_search"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OthersearchMenu"
+            android:label="@string/title_activity_othersearch_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".clientNameSearch"
+            android:label="@string/title_activity_client_name_search"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CourtNameSearch"
+            android:label="@string/title_activity_court_name_search"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CaseNumSearch"
+            android:label="@string/title_activity_case_num_search"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DohSearch"
+            android:label="@string/title_activity_doh_search"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RestoreData"
+            android:label="@string/title_activity_restore_data"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
