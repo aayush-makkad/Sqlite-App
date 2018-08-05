@@ -82,6 +82,10 @@
         <activity
             android:name=".RestoreData"
             android:label="@string/title_activity_restore_data"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FingerprintForNotification"
+            android:label="@string/title_activity_fingerprint_for_notification"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
