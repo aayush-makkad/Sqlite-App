@@ -4,10 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.style.TtsSpan;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,11 +23,16 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 public class Backup extends AppCompatActivity implements View.OnClickListener{
 
     Switch sw1;
     Button bck;
+    DatabaseHelper dh = new DatabaseHelper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,6 +134,10 @@ public class Backup extends AppCompatActivity implements View.OnClickListener{
         switch (v.getId())
         {
             case R.id.btn :  {backup();
+
+                               List<ExportDataModel> dat= null;
+                               dat = dh.getListFromData();
+                               dh.exportTocsv(dat);
                                 Toast.makeText(this,"Done",Toast.LENGTH_LONG);
                                 break;}
                                 

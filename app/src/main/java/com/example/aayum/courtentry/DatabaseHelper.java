@@ -9,6 +9,18 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Environment;
+import android.support.annotation.NonNull;
+import android.widget.Toast;
+
+import com.opencsv.CSVWriter;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -39,6 +51,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+
+
     public boolean insertData(String case_num,String case_name,String title,String last_date,String next_date,String total,String paid,String mobile,String court) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -62,6 +76,192 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
         return res;
+    }
+
+    public List<ExportDataModel> getListFromData(){
+
+        List<ExportDataModel> result = new List<ExportDataModel>() {
+            @Override
+            public int size() {
+                return 0;
+            }
+
+            @Override
+            public boolean isEmpty() {
+                return false;
+            }
+
+            @Override
+            public boolean contains(Object o) {
+                return false;
+            }
+
+            @NonNull
+            @Override
+            public Iterator<ExportDataModel> iterator() {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            public Object[] toArray() {
+                return new Object[0];
+            }
+
+            @NonNull
+            @Override
+            public <T> T[] toArray(@NonNull T[] ts) {
+                return null;
+            }
+
+            @Override
+            public boolean add(ExportDataModel exportDataModel) {
+                return false;
+            }
+
+            @Override
+            public boolean remove(Object o) {
+                return false;
+            }
+
+            @Override
+            public boolean containsAll(@NonNull Collection<?> collection) {
+                return false;
+            }
+
+            @Override
+            public boolean addAll(@NonNull Collection<? extends ExportDataModel> collection) {
+                return false;
+            }
+
+            @Override
+            public boolean addAll(int i, @NonNull Collection<? extends ExportDataModel> collection) {
+                return false;
+            }
+
+            @Override
+            public boolean removeAll(@NonNull Collection<?> collection) {
+                return false;
+            }
+
+            @Override
+            public boolean retainAll(@NonNull Collection<?> collection) {
+                return false;
+            }
+
+            @Override
+            public void clear() {
+
+            }
+
+            @Override
+            public ExportDataModel get(int i) {
+                return null;
+            }
+
+            @Override
+            public ExportDataModel set(int i, ExportDataModel exportDataModel) {
+                return null;
+            }
+
+            @Override
+            public void add(int i, ExportDataModel exportDataModel) {
+
+            }
+
+            @Override
+            public ExportDataModel remove(int i) {
+                return null;
+            }
+
+            @Override
+            public int indexOf(Object o) {
+                return 0;
+            }
+
+            @Override
+            public int lastIndexOf(Object o) {
+                return 0;
+            }
+
+            @NonNull
+            @Override
+            public ListIterator<ExportDataModel> listIterator() {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            public ListIterator<ExportDataModel> listIterator(int i) {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            public List<ExportDataModel> subList(int i, int i1) {
+                return null;
+            }
+        };
+
+        Cursor res = getAllData();
+        if(res.getCount()!=0){
+            while(res.moveToNext()){
+
+                ExportDataModel es = new ExportDataModel();
+                es.setCol1(res.getString(0));
+                es.setCol2(res.getString(1));
+                es.setCol3(res.getString(2));
+                es.setCol4(res.getString(3));
+                es.setCol5(res.getString(4));
+                es.setCol6(res.getString(5));
+                es.setCol7(res.getString(6));
+                es.setCol8(res.getString(7));
+                es.setCol9(res.getString(8));
+                es.setCol10(res.getString(9));
+                result.add(es);
+
+
+            }
+
+        }
+        return result;
+    }
+
+
+    public void exportTocsv(List<ExportDataModel> data){
+
+
+        File csv = new File(Environment.getExternalStorageDirectory().getPath()+"//Android/data/com.example.aayum.courtentry/files");
+        if(!csv.exists())
+            csv.mkdirs();
+        File f = new File(csv,"transfer.csv");
+        try {
+
+            f.createNewFile();
+            CSVWriter csvwrite = new CSVWriter(new FileWriter(f));
+           for(ExportDataModel ea: data){
+
+               csvwrite.writeNext(new String[]{ea.getCol1()});
+               csvwrite.writeNext(new String[]{ea.getCol2()});
+               csvwrite.writeNext(new String[]{ea.getCol3()});
+               csvwrite.writeNext(new String[]{ea.getCol4()});
+               csvwrite.writeNext(new String[]{ea.getCol5()});
+               csvwrite.writeNext(new String[]{ea.getCol6()});
+               csvwrite.writeNext(new String[]{ea.getCol7()});
+               csvwrite.writeNext(new String[]{ea.getCol8()});
+               csvwrite.writeNext(new String[]{ea.getCol9()});
+               csvwrite.writeNext(new String[]{ea.getCol10()});
+
+           }
+           csvwrite.close();
+
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+
+
     }
 
 
