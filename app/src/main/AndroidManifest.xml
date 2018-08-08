@@ -86,6 +86,10 @@
         <activity
             android:name=".FingerprintForNotification"
             android:label="@string/title_activity_fingerprint_for_notification"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ExportCSV"
+            android:label="@string/title_activity_export_csv"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

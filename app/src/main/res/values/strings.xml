@@ -22,4 +22,5 @@
     <string name="title_activity_doh_search">DohSearch</string>
     <string name="title_activity_restore_data">RestoreData</string>
     <string name="title_activity_fingerprint_for_notification">FingerprintForNotification</string>
+    <string name="title_activity_export_csv">ExportCSV</string>
 </resources>
