@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Environment;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.opencsv.CSVWriter;
@@ -107,7 +108,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public void exportTocsv(List<ExportDataModel> data){
+    public void exportTocsv(ArrayList<ExportDataModel> data){
 
 
         File csv = new File(Environment.getExternalStorageDirectory().getPath()+"/Android/data/com.example.aayum.courtentry/files");
@@ -117,6 +118,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         try {
 
             f.createNewFile();
+
             CSVWriter csvwrite = new CSVWriter(new FileWriter(f));
             String[] headers = {COL_1,COL_2,COL_3,COL_4,COL_5,COL_6,COL_7,COL_8,COL_9,COL_10};
             csvwrite.writeNext(headers);
