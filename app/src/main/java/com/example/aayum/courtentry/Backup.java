@@ -32,6 +32,7 @@ public class Backup extends AppCompatActivity implements View.OnClickListener{
 
     Switch sw1;
     Button bck;
+    Button trans;
     DatabaseHelper dh = new DatabaseHelper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class Backup extends AppCompatActivity implements View.OnClickListener{
         setSupportActionBar(toolbar);
         sw1 = findViewById(R.id.switch1);
         bck = findViewById(R.id.btn);
+        trans = findViewById(R.id.btn2);
         bck.setVisibility(View.INVISIBLE);
         if(sw1!=null){
             sw1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -57,6 +59,7 @@ public class Backup extends AppCompatActivity implements View.OnClickListener{
 
 
             bck.setOnClickListener(this);
+        trans.setOnClickListener(this);
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -140,6 +143,14 @@ public class Backup extends AppCompatActivity implements View.OnClickListener{
                                dh.exportTocsv(dat);
                                 Toast.makeText(this,"Done",Toast.LENGTH_LONG);
                                 break;}
+
+
+            case R.id.btn2 :{
+                Intent i = new Intent(this,FileTransferActivity.class);
+                startActivity(i);
+                finish();
+
+            }
                                 
         }
 

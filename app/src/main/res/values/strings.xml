@@ -23,4 +23,5 @@
     <string name="title_activity_restore_data">RestoreData</string>
     <string name="title_activity_fingerprint_for_notification">FingerprintForNotification</string>
     <string name="title_activity_export_csv">ExportCSV</string>
+    <string name="title_activity_file_transfer">FileTransferActivity</string>
 </resources>
