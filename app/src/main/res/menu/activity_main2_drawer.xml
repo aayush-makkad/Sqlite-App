@@ -37,6 +37,11 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="Backup"
             />
+        <item
+            android:id="@+id/remind"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Reminder"
+            />
 
         <item
             android:id="@+id/nav_search"

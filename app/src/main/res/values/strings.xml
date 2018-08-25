@@ -24,4 +24,5 @@
     <string name="title_activity_fingerprint_for_notification">FingerprintForNotification</string>
     <string name="title_activity_export_csv">ExportCSV</string>
     <string name="title_activity_file_transfer">FileTransferActivity</string>
+    <string name="title_activity_reminder">ReminderActivity</string>
 </resources>

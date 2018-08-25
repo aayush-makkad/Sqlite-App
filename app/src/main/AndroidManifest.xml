@@ -5,10 +5,10 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-
-
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <application
         android:allowBackup="true"
@@ -98,6 +98,10 @@
         <activity
             android:name=".FileTransferActivity"
             android:label="@string/title_activity_file_transfer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ReminderActivity"
+            android:label="@string/title_activity_reminder"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
