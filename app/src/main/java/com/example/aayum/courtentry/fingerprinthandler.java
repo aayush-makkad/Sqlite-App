@@ -67,7 +67,7 @@ public class fingerprinthandler extends FingerprintManager.AuthenticationCallbac
     public void onAuthenticationSucceeded(
             FingerprintManager.AuthenticationResult result) {
         this.context=context;  //<< initialize Context here
-        Intent i = new Intent(context,Main2Activity.class);
+        Intent i = new Intent(context,btnact.class);
         //....your code here
         context.startActivity(i);
         Toast.makeText(context, "Success!", Toast.LENGTH_LONG).show();

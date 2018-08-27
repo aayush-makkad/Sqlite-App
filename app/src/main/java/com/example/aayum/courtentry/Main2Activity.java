@@ -164,6 +164,7 @@ public class Main2Activity extends AppCompatActivity
             // Show all data
             showMessage("Data", buffer.toString());
 
+
             // Handle the camera action
         }  else if (id == R.id.nav_slideshow) {
             Intent i = new Intent(Main2Activity.this,DeleteActivity.class);
@@ -207,26 +208,6 @@ public class Main2Activity extends AppCompatActivity
 //
         else if (id == R.id.nav_diary) {
 
-            Cursor res = mydb2.getAllData();
-            if (res.getCount() == 0) {
-                // show message
-                showMessage("Error", "Nothing found");
-
-            }
-
-            StringBuffer buffer = new StringBuffer();
-            while (res.moveToNext()) {
-                buffer.append("Id :" + res.getString(0) + "\n");
-                buffer.append("Case Number :" + res.getString(1) + "\n");
-                buffer.append("Title :" + res.getString(3) + "\n");
-                buffer.append("Last date of hearing :" + res.getString(4) + "\n");
-                buffer.append("Next Date of hearing :" + res.getString(5) + "\n\n");
-
-
-            }
-
-            // Show all data
-            showMessage("Data", buffer.toString());
 
 
         }
@@ -257,5 +238,6 @@ public class Main2Activity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
             return true;
         }
+
     }
 
